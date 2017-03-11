@@ -1,0 +1,3 @@
+--report spec
+--compilers js:babel-core/register
+--slow 5000
