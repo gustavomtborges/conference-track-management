@@ -1,7 +1,10 @@
 import fs from 'fs';
-import { readContentFile, formatOutput, contentFileToArray } from '../../src/utils/file-utils';
+import {
+  readContentFile,
+  formatOutput, contentFileToArray,
+} from '../../../src/utils/file-input';
 
-describe('file-utils:', () => {
+describe('Utils: file-utils:', () => {
   describe('readContentFile():', () => {
     const fileContent =
       'Writing Fast Tests Against Enterprise Rails 60min\n' +
