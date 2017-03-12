@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./index.js input.txt",
+    "test": "npm run lint && npm run test:unit",
     "test:unit": "mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js",
-    "start": "babel-node ./index.js input.tx"
+		"lint": "eslint **/*.js",
+		"lint:fix": "eslint **/*.js --fix"
   },
   "author": "Gustavo M T Borges",
   "license": "ISC",
