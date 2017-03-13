@@ -1,6 +1,7 @@
 import { readContentFile, contentFileToArray, formatOutput, printOutput } from './utils/file-input';
 import { splitMinuteAndNameFromTalks, sortByLargestToSmallestTalk } from './utils/array';
-import { calcNumberOfTracks, pickUpTalksForTrack } from './controllers/tracks';
+import { calcNumberOfTracks, pickUpTalksForATrack } from './controllers/tracks';
+import setTimeForTalks from './controllers/talks';
 
 export default () => {
   if (!process.argv[2]) {
@@ -12,7 +13,8 @@ export default () => {
     .then(arrayOfTalks => splitMinuteAndNameFromTalks(arrayOfTalks))
     .then(talks => sortByLargestToSmallestTalk(talks))
     .then(sortedTalks => calcNumberOfTracks(sortedTalks))
-    .then(data => pickUpTalksForTrack(data))
+    .then(data => pickUpTalksForATrack(data))
+    .then(tracks => setTimeForTalks(tracks))
     .then(result => formatOutput(result))
     .then(formatedResult => printOutput(formatedResult))
     .catch(err => process.stdout.write(err));
