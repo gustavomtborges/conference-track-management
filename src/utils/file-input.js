@@ -8,7 +8,7 @@ export function readContentFile() {
     try {
       return resolve(fs.readFileSync(process.argv[2], 'utf-8'));
     } catch (err) {
-      return reject('error on read input.txt');
+      return reject('Error on read your-input.txt\n\nPlease verify if you are typing the correct name and path.\n\n');
     }
   });
 }
@@ -18,37 +18,19 @@ export function contentFileToArray(content) {
 }
 
 export function formatOutput(result) {
-  const fakeResult = [{
-    number: 1,
-    talks: [
-      {
-        min: 60,
-        hour: '9:00AM',
-        name: 'Writing Fast Tests Against Enterprise Rails 60min',
-      }],
-  }, {
-    number: 2,
-    talks: [
-      {
-        min: 45,
-        hour: '9:00AM',
-        name: 'Writing Fast Tests Against Enterprise Rails 60min',
-      }],
-  }];
-
-  const formatedResult = fakeResult.map((track) => {
-    const traksFormated = `\nTrack${track.number}:\n`;
+  const formatedResult = result.map((track) => {
+    const tracksFormated =
+      `\nTrack${track.number}:\n`;
 
     const talksFormated = track.talks.map(talk =>
-      `\n${talk.hour} ${talk.name}\n`).join().replace(',', '');
+      `\n${talk.name}\n`).join('');
 
-    return traksFormated + talksFormated;
+    return (tracksFormated + talksFormated);
   });
-
-  return formatedResult.join().replace(',', '');
+  return formatedResult.join('');
 }
 
 
-export function printOutput(result) {
-  process.stdout.write(`${result} \n`);
+export function printOutput(formatedResult) {
+  process.stdout.write(`${formatedResult}\n`);
 }
