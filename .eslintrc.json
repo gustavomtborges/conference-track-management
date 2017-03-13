@@ -27,7 +27,8 @@
 			"error",
 			"always"
 		],
-		"no-plusplus": "off"
+		"no-plusplus": "off",
+		"no-param-reassign": "off"
 	},
 	"globals": {
 		"describe": true,
