@@ -61,7 +61,7 @@ describe('Utils: file-input:', () => {
         talks: [
           {
             min: 60,
-            hour: '9:00AM',
+            time: '9:00 AM',
             name: 'Writing Fast Tests Against Enterprise Rails 60min',
           }],
       }, {
@@ -69,14 +69,14 @@ describe('Utils: file-input:', () => {
         talks: [
           {
             min: 45,
-            hour: '10:00AM',
+            time: '10:00 AM',
             name: 'Overdoing it in Python 45min',
           }],
       }];
 
       const formatedResult =
-        '\nTrack1:\n\n9:00AM Writing Fast Tests Against Enterprise Rails 60min\n' +
-        '\nTrack2:\n\n10:00AM Overdoing it in Python 45min\n';
+        '\nTrack1:\n\n9:00 AM Writing Fast Tests Against Enterprise Rails 60min\n' +
+        '\nTrack2:\n\n10:00 AM Overdoing it in Python 45min\n';
 
       expect(formatOutput(result)).to.be.eql(formatedResult);
     });
