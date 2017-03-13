@@ -11,7 +11,7 @@ export function calcNumberOfTracks(talks) {
   return { tracks, talks, totalMinutes };
 }
 
-export function pickUpTalksForTrack(data) {
+export function pickUpTalksForATrack(data) {
   if (data.totalMinutes > TRACK_DURATION) {
     return data.tracks.map((track) => {
       let duration = data.talks[0].min;

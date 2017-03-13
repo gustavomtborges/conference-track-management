@@ -1,6 +1,6 @@
 import {
   calcNumberOfTracks,
-  pickUpTalksForTrack,
+  pickUpTalksForATrack,
 } from '../../../src/controllers/tracks';
 
 describe('Controller: tracks', () => {
@@ -29,7 +29,7 @@ describe('Controller: tracks', () => {
     });
   });
 
-  describe('pickUpTalksForTrack():', () => {
+  describe('pickUpTalksForATrack():', () => {
     it('Should pick up talks for a track that fits your duration of 420min', () => {
       const tracks = [{ number: 1, talks: [] }, { number: 2, talks: [] }];
       const talks = [
@@ -72,7 +72,7 @@ describe('Controller: tracks', () => {
         ],
       }];
 
-      expect(pickUpTalksForTrack({ tracks, talks, totalMinutes }))
+      expect(pickUpTalksForATrack({ tracks, talks, totalMinutes }))
         .to.be.eql(updatedTracks);
     });
   });
