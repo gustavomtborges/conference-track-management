@@ -14,13 +14,13 @@ export function calcNumberOfTracks(talks) {
 export function pickUpTalksForTrack(data) {
   if (data.totalMinutes > TRACK_DURATION) {
     return data.tracks.map((track) => {
-      let minutes = data.talks[0].min;
-      while (data.talks.length && minutes <= TRACK_DURATION) {
+      let duration = data.talks[0].min;
+      while (data.talks.length && duration <= TRACK_DURATION) {
         const talk = data.talks.shift();
-        minutes += talk.min;
+        duration += talk.min;
         track.talks.push(talk);
       }
-      minutes = 0;
+      duration = 0;
       return track;
     });
   }
