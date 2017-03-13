@@ -23,7 +23,7 @@ export function formatOutput(result) {
       `\nTrack${track.number}:\n`;
 
     const talksFormated = track.talks.map(talk =>
-      `\n${talk.name}\n`).join('');
+      `\n${talk.time} ${talk.name}\n`).join('');
 
     return (tracksFormated + talksFormated);
   });
