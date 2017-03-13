@@ -4,7 +4,7 @@ import {
   formatOutput, contentFileToArray,
 } from '../../../src/utils/file-input';
 
-describe('Utils: file-utils:', () => {
+describe('Utils: file-input:', () => {
   describe('readContentFile():', () => {
     const fileContent =
       'Writing Fast Tests Against Enterprise Rails 60min\n' +
@@ -60,6 +60,7 @@ describe('Utils: file-utils:', () => {
         number: 1,
         talks: [
           {
+            min: 60,
             hour: '9:00AM',
             name: 'Writing Fast Tests Against Enterprise Rails 60min',
           }],
@@ -67,6 +68,7 @@ describe('Utils: file-utils:', () => {
         number: 2,
         talks: [
           {
+            min: 45,
             hour: '9:00AM',
             name: 'Writing Fast Tests Against Enterprise Rails 60min',
           }],

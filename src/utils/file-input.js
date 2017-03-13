@@ -22,6 +22,7 @@ export function formatOutput(result) {
     number: 1,
     talks: [
       {
+        min: 60,
         hour: '9:00AM',
         name: 'Writing Fast Tests Against Enterprise Rails 60min',
       }],
@@ -29,6 +30,7 @@ export function formatOutput(result) {
     number: 2,
     talks: [
       {
+        min: 45,
         hour: '9:00AM',
         name: 'Writing Fast Tests Against Enterprise Rails 60min',
       }],

@@ -26,7 +26,8 @@
 		"semi": [
 			"error",
 			"always"
-		]
+		],
+		"no-plusplus": "off"
 	},
 	"globals": {
 		"describe": true,

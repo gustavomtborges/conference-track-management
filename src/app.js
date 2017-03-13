@@ -1,9 +1,11 @@
 import {
   readContentFile, contentFileToArray, printOutput,
-} from './utils/file-utils';
+} from './utils/file-input';
+import calcNumberOfTracks from './controllers/tracks';
 
 export default () => {
   readContentFile()
     .then(fileContent => contentFileToArray(fileContent))
-    .then(arrayOfTalks => printOutput(arrayOfTalks));
+    .then(arrayOfTalks => calcNumberOfTracks(arrayOfTalks))
+    .then(numberOfTracks => printOutput(numberOfTracks));
 };
