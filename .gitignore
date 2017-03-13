@@ -3,5 +3,5 @@ node_modules/
 .jar
 .lib
 .class
-.log
+*.log
 
