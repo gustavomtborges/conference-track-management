@@ -31,11 +31,11 @@ describe('Utils: file-input:', () => {
         .returns(Error);
 
       Promise.reject = sinon.stub();
-      Promise.reject.rejects('error on read input.txt');
+      Promise.reject.rejects('Error on read your-input.txt\n\nPlease verify if you are typing the correct name and path.\n\n');
 
       readContentFile()
         .then().catch((err) => {
-          expect(err).to.be.eql('error on read input.txt');
+          expect(err).to.be.eql('Error on read your-input.txt\n\nPlease verify if you are typing the correct name and path.\n\n');
         }).then(() => done());
     });
   });
@@ -69,14 +69,14 @@ describe('Utils: file-input:', () => {
         talks: [
           {
             min: 45,
-            hour: '9:00AM',
-            name: 'Writing Fast Tests Against Enterprise Rails 60min',
+            hour: '10:00AM',
+            name: 'Overdoing it in Python 45min',
           }],
       }];
 
       const formatedResult =
         '\nTrack1:\n\n9:00AM Writing Fast Tests Against Enterprise Rails 60min\n' +
-        '\nTrack2:\n\n9:00AM Writing Fast Tests Against Enterprise Rails 60min\n';
+        '\nTrack2:\n\n10:00AM Overdoing it in Python 45min\n';
 
       expect(formatOutput(result)).to.be.eql(formatedResult);
     });
